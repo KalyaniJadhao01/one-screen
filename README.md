@@ -143,10 +143,6 @@ For a clean test, use a fresh Chrome profile. The tester must configure their ow
 Indian Institute of Information Technology, Bhopal, India
 **Built for Hackyard Build 2026**
 
-### Institutional Links
-* [IIIT Bhopal Official Website](https://www.iiitbhopal.ac.in/)
-* [IIIT Bhopal Placements](https://iiitbhopal.ac.in/placements)
 
----
 
 **ONE SCREEN — Organize resources around outcomes, not just tabs.**
