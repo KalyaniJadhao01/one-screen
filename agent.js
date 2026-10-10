@@ -1,7 +1,12 @@
+javascript
 "use strict";
 
 const GEMINI_MODEL = "gemini-3.8-flash";
 const GEMINI_TIMEOUT_MS = 45000;
+
+// Add your NEW Gemini API key here.
+// Do not commit a real API key to a public repository.
+const GEMINI_API_KEY = "PASTE_YOUR_NEW_API_KEY_HERE";
 
 async function generateWorkspace(goal, tabs) {
   const safeGoal = String(goal || "").trim();
@@ -13,13 +18,15 @@ async function generateWorkspace(goal, tabs) {
     };
   });
 
-  let apiKey = "";
+  let apiKey = GEMINI_API_KEY || "";
 
-  try {
-    const result = await chrome.storage.local.get("geminiApiKey");
-    apiKey = result.geminiApiKey || "";
-  } catch (error) {
-    console.error("Could not read Gemini API key:", error);
+  if (!apiKey) {
+    try {
+      const result = await chrome.storage.local.get("geminiApiKey");
+      apiKey = result.geminiApiKey || "";
+    } catch (error) {
+      console.error("Could not read Gemini API key:", error);
+    }
   }
 
   if (!apiKey) {
@@ -106,7 +113,7 @@ async function generateWorkspace(goal, tabs) {
     } catch (error) {
       throw new Error(
         "Gemini returned an invalid HTTP response. Status: " +
-        response.status
+          response.status
       );
     }
 
@@ -120,9 +127,9 @@ async function generateWorkspace(goal, tabs) {
 
       throw new Error(
         "Gemini API error (" +
-        response.status +
-        "): " +
-        apiMessage
+          response.status +
+          "): " +
+          apiMessage
       );
     }
 
@@ -211,8 +218,8 @@ async function generateWorkspace(goal, tabs) {
     if (error.name === "AbortError") {
       console.error(
         "Gemini request timed out after " +
-        GEMINI_TIMEOUT_MS / 1000 +
-        " seconds."
+          GEMINI_TIMEOUT_MS / 1000 +
+          " seconds."
       );
     } else {
       console.error("Gemini generation failed:", error);
@@ -326,3 +333,4 @@ function categorizeResource(text) {
 
   return "Reference";
 }
+````
