@@ -1,0 +1,17 @@
+{
+"manifest_version": 3,
+"name": "ONE SCREEN",
+"version": "1.0.0",
+"description": "Turn scattered browser tabs into one actionable workspace.",
+"permissions": [
+"tabs",
+"storage"
+],
+"host_permissions": [
+"https://generativelanguage.googleapis.com/*"
+],
+"action": {
+"default_title": "ONE SCREEN",
+"default_popup": "popup.html"
+}
+}

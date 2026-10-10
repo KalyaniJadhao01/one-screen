@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ONE SCREEN</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="app">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="brand">
+        <div class="brand-icon">O</div>
+        <div>
+          <h1>ONE SCREEN</h1>
+          <p>One task. One workspace.</p>
+        </div>
+      </div>
+
+      <span class="status">● LOCAL</span>
+    </header>
+
+    <!-- Introduction -->
+    <section class="intro">
+      <p class="eyebrow">YOUR PERSONAL WORKSPACE</p>
+      <h2>What are you<br>working on today?</h2>
+      <p class="subtitle">
+        Turn your open tabs into a clear action plan.
+      </p>
+    </section>
+
+    <!-- Goal Input -->
+    <section class="goal-section">
+      <label for="goal">YOUR GOAL</label>
+
+      <textarea
+        id="goal"
+        placeholder="e.g. Prepare my Java internship applications"
+      ></textarea>
+    </section>
+
+    <!-- Browser Tabs -->
+    <section class="tabs-section">
+      <div class="section-heading">
+        <div>
+          <h3>Your open tabs</h3>
+          <p id="tab-count">Loading tabs...</p>
+        </div>
+
+        <button
+          id="select-all"
+          class="text-button"
+          type="button"
+        >
+          Select all
+        </button>
+      </div>
+
+      <div id="tabs-list" class="tabs-list"></div>
+    </section>
+
+    <!-- Generate Workspace -->
+    <button
+      id="generate"
+      class="primary-button"
+      type="button"
+    >
+      <span>✦</span> Generate my workspace
+    </button>
+
+    <p id="message" class="message" role="status"></p>
+
+    <!-- Current Workspace -->
+    <section id="workspace" class="workspace hidden">
+
+      <div class="workspace-top">
+        <div>
+          <p class="eyebrow">YOUR WORKSPACE</p>
+          <h2 id="workspace-title"></h2>
+        </div>
+
+        <button
+          id="save-workspace"
+          class="save-button"
+          type="button"
+        >
+          Save Workspace
+        </button>
+      </div>
+
+      <!-- Organized Resources -->
+      <section class="resource-section">
+        <h3>Organized resources</h3>
+        <div id="resources"></div>
+      </section>
+
+      <!-- Checklist -->
+      <section class="checklist-section">
+        <div class="section-heading">
+          <h3>Action plan</h3>
+          <span id="progress">0/0 completed</span>
+        </div>
+
+        <div id="checklist"></div>
+      </section>
+
+      <!-- Notes -->
+      <section class="notes-section">
+        <label for="notes">WORKSPACE NOTES</label>
+
+        <textarea
+          id="notes"
+          placeholder="Add your notes here..."
+        ></textarea>
+      </section>
+
+    </section>
+
+
+    <!-- Gemini AI Settings -->
+<section class="ai-settings">
+  <p class="eyebrow">AI CONFIGURATION</p>
+  <h2>Connect Gemini AI</h2>
+
+  <p class="subtitle">
+    Add your Gemini API key to generate personalized workspaces.
+  </p>
+
+  <label for="api-key">GEMINI API KEY</label>
+
+  <input
+    type="password"
+    id="api-key"
+    placeholder="Paste your API key"
+    autocomplete="off"
+  >
+
+  <div class="ai-settings-actions">
+    <button id="save-api-key" type="button">
+      Save API Key
+    </button>
+
+    <button id="remove-api-key" type="button">
+      Remove Key
+    </button>
+  </div>
+
+  <p id="api-key-status" role="status">
+    Gemini AI is not configured.
+  </p>
+</section>
+
+
+
+    <!-- Saved Workspaces -->
+    <section
+      id="saved-workspaces-section"
+      class="saved-workspaces-section"
+    >
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">YOUR COLLECTION</p>
+          <h2>My Saved Workspaces</h2>
+        </div>
+      </div>
+
+      <p class="subtitle">
+        Reopen your previous work or delete workspaces you no longer need.
+      </p>
+
+      <div id="saved-workspaces">
+        Loading saved workspaces...
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <span>Built for focused work.</span>
+    </footer>
+
+  </main>
+
+  <!-- JavaScript -->
+  <script src="agent.js"></script>
+  <script src="popup.js"></script>
+
+</body>
+</html>
