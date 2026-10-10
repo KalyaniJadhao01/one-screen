@@ -13,6 +13,16 @@ ONE SCREEN is an AI-powered Chrome extension that converts selected browser tabs
 **2. Install:** Open `chrome://extensions` → enable **Developer mode** → click **Load unpacked** → select the extracted folder containing `manifest.json`.
 
 **3. Configure AI:** Open ONE SCREEN, enter your Gemini API key in the AI settings, and save it locally. Each tester must configure their own key; the developer's key is not included.
+         ### 🔑 Gemini API Setup
+
+1. Visit [Google AI Studio](https://aistudio.google.com/apikey).
+2. Sign in and click **Create API Key**.
+3. Open ONE SCREEN in Chrome and go to API key settings.
+4. Paste your key and click **Save API Key**.
+5. Enter your goal, select tabs, and click **Generate Workspace**.
+
+**Note:** Keep your API key private. If AI generation fails, ONE SCREEN uses a local fallback.
+
 
 **4. Run the example below:** Open the sample websites in separate tabs, enter the provided goal, select the tabs, and click **Generate Workspace**.
 
