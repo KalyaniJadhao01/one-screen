@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ONE SCREEN
 
 ### One task. One screen. Everything you need.
@@ -450,3 +451,7 @@ Our focus is a lightweight, practical product that connects a user's goal, selec
 Enter a goal. Select relevant tabs. Generate a workspace. Follow the checklist. Save your progress.
 
 **One task. One screen. Everything you need.**
+=======
+# one-screen
+Turn browser tabs into goal-oriented workspaces with AI.
+>>>>>>> 2078efea817df22cac7908ce459fcbd6eefa9ac3
